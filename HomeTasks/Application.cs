@@ -12,7 +12,8 @@ internal static class HomeTasks
             new HomeTask3(),
             new HomeTask4(),
             new HomeTask5(),
-            new HomeTask6()
+            new HomeTask6(), 
+            new HomeTask11Arrays()
         };
 
         Console.WriteLine("Enter home task numbers separated by commas (e.g., 1,2,3):");
