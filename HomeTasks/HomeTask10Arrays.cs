@@ -12,14 +12,38 @@ internal class HomeTask10Arrays : IBaseHomeTask
         int length = int.Parse(Console.ReadLine());
         int[] array = new int[length];
 
-        for (int i = 0; i < length; i++)
-            {
-                array[i] = rand.Next(1, 100);
-            }
-// Print the array and max,min, average
-            Console.WriteLine("Your array: " + string.Join(", ", array));
-            Console.WriteLine("The max value is" + "max");
-            Console.WriteLine("The min value is" + "min");
-            Console.WriteLine("The average value is" + "average");
+        for (int i = 0; i < length; i++) {
+            array[i] = rand.Next(1, 100);
         }
+
+        int max = array[0];
+        for (int i = 1; i < array.Length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+
+        int min = array[0];
+        for (int i = 1; i < array.Length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+
+        // 5. Find sum, then average
+        int sum = 0;
+        for (int i = 0; i < array.Length; i++) {
+            sum += array[i];
+        }
+        // Use (double) to avoid integer division
+        double avg = (double)sum / array.Length;
+
+
+// Print the array and max,min, average
+        Console.WriteLine("Your array: " + string.Join(", ", array));
+        Console.WriteLine("The max value is " + max);
+        Console.WriteLine("The min value is " + min);
+        Console.WriteLine("The average is " + avg);
+
     }
+}
